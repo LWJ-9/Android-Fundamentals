@@ -1,4 +1,4 @@
-package com.example.androidfundamentals
+package com.example.androidfundamentals.ui.todo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package com.example.androidfundamentals
+package com.example.androidfundamentals.ui.todo
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.androidfundamentals.databinding.ItemTodoBinding
 
 class TodoAdapter(
-    var todos: List<Todo>
+    private var todos: List<Todo>
 ): RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
 
     inner class TodoViewHolder(val binding: ItemTodoBinding) : RecyclerView.ViewHolder(binding.root)

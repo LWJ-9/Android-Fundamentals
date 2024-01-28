@@ -1,4 +1,4 @@
-package com.example.androidfundamentals
+package com.example.androidfundamentals.ui.todo
 
 data class Todo(
     var title: String,
