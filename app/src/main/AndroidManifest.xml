@@ -22,6 +22,10 @@
             android:name=".ui.todo.TodoActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.form.FormActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

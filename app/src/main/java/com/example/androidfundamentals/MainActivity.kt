@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.example.androidfundamentals.databinding.ActivityMainBinding
+import com.example.androidfundamentals.ui.form.FormActivity
 import com.example.androidfundamentals.ui.lifecycle.LifecycleActivity
 import com.example.androidfundamentals.ui.todo.TodoActivity
 
@@ -22,14 +23,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.btnApply.setOnClickListener {
-            val firstName = binding.etFirstName.text.toString()
-            val lastName = binding.etLastName.text.toString()
-            val birthDate = binding.etBirthDate.text.toString()
-            val country = binding.etCountry.text.toString()
-            Log.d("MainActivity", "$firstName $lastName $birthDate $country")
-            Toast.makeText(this, "$firstName $lastName $birthDate $country", Toast.LENGTH_SHORT).show()
+            Log.d("MainActivity", "Go to Form button clicked")
+            val intent = Intent(this, FormActivity::class.java)
+            startActivity(intent)
         }
-
         binding.btnTakePhoto.setOnClickListener {
             Log.d("MainActivity", "Take photo button clicked")
             Intent(Intent.ACTION_GET_CONTENT).also {
