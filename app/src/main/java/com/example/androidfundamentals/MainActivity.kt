@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.example.androidfundamentals.databinding.ActivityMainBinding
+import com.example.androidfundamentals.services.RunningService
 import com.example.androidfundamentals.ui.form.FormActivity
 import com.example.androidfundamentals.ui.lifecycle.LifecycleActivity
 import com.example.androidfundamentals.ui.todo.TodoActivity
@@ -45,6 +46,18 @@ class MainActivity : AppCompatActivity() {
             Log.d("MainActivity", "Go to Lifecycle button clicked")
             val intent = Intent(this, LifecycleActivity::class.java)
             startActivity(intent)
+        }
+        binding.btnStartRunningService.setOnClickListener {
+            Log.d("MainActivity", "Start Running Service button clicked")
+            val intent = Intent(this, RunningService::class.java)
+            intent.action = RunningService.Action.START.name
+            startService(intent)
+        }
+        binding.btnStopRunningService.setOnClickListener {
+            Log.d("MainActivity", "Stop Running Service button clicked")
+            val intent = Intent(this, RunningService::class.java)
+            intent.action = RunningService.Action.STOP.name
+            stopService(intent)
         }
     }
 

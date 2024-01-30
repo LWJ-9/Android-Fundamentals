@@ -81,7 +81,7 @@ class LifecycleFragment : Fragment() {
     }
 
     private fun showLocalNotification(text: String) {
-        appNotificationDelegate.requestPermissions()
+        // appNotificationDelegate.requestPermissions()
         mLastNotificationId = appNotificationDelegate.showLifecycleNotification(text, TAG)
     }
 

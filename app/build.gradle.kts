@@ -53,6 +53,6 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    // TODO list
+    // the todo0 list
     implementation("androidx.recyclerview:recyclerview:1.2.1")
 }

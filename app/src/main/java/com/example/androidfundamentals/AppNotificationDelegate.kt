@@ -13,6 +13,8 @@ import androidx.core.app.NotificationManagerCompat
 class AppNotificationDelegate(context: Context) {
     companion object {
         const val TAG = "AppNotificationDelegate"
+        const val RUNNING_CHANNEL_ID = "running_channel"
+        const val LIFECYCLE_CHANNEL_ID = "lifecycle_channel"
         private lateinit var mNotificationManager: NotificationManager
         private var mNotificationId = 0
         private lateinit var applicationContext: Context
@@ -25,7 +27,7 @@ class AppNotificationDelegate(context: Context) {
     }
 
     fun showLifecycleNotification(text: String,tag:String) : Int {
-        val channelId = "lifecycle_channel"
+        val channelId = LIFECYCLE_CHANNEL_ID
 
         val notification = NotificationCompat.Builder(applicationContext, channelId)
             .setContentTitle("Lifecycle ID: $mNotificationId")
@@ -50,13 +52,16 @@ class AppNotificationDelegate(context: Context) {
             return
         }
         val channels: List<String> = listOf(
-            "lifecycle_channel"
+            LIFECYCLE_CHANNEL_ID,
+            RUNNING_CHANNEL_ID
         )
         val channelName: Map<String, String> = mapOf(
-            "lifecycle_channel" to "Lifecycle Notifications"
+            LIFECYCLE_CHANNEL_ID to "Lifecycle Notifications",
+            RUNNING_CHANNEL_ID to "Running Notifications"
         )
         val channelImportance: Map<String, Int> = mapOf(
-            "lifecycle_channel" to NotificationManager.IMPORTANCE_DEFAULT
+            LIFECYCLE_CHANNEL_ID to NotificationManager.IMPORTANCE_DEFAULT,
+            RUNNING_CHANNEL_ID to NotificationManager.IMPORTANCE_HIGH
         )
         channels.forEach {
             val channel = NotificationChannel(it, channelName[it], channelImportance[it]!!)
